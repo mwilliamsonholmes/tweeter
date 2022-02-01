@@ -1,0 +1,11 @@
+header {
+  height: 400px;
+  margin-top: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:thistle;
+  flex-direction: column;
+  background-color: #d1bea7;
+background-image: url("https://www.transparenttextures.com/patterns/fresh-snow.png"); 
+}
