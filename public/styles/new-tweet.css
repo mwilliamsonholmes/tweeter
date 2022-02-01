@@ -1,0 +1,20 @@
+
+.counter {
+font-family: 'Bungee';
+border-top: 10px;
+float: right;
+}
+.button {
+  font-family: 'Bungee';
+  background-color: #4056A1 ;
+  color: #FFFFFF;
+}
+#tweet-text {
+  background-color: #f4f1ec;
+  width: 100%;
+  border-style: none;
+  border-bottom:4px solid rgb(10, 10, 171);
+}
+.input {
+  font-family: 'Bungee';
+}
