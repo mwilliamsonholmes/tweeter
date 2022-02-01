@@ -1,0 +1,30 @@
+nav {
+  color: #FFFFFF;
+  background-color: #4056A1;
+  height: 120px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  padding: 1.5em;
+}
+
+#logo {
+  font-family: 'Bungee', sans-serif;
+}
+
+#write-new {
+  display: flex;
+  flex-direction: column;
+}
+/* .banner {
+  font-family: 'Source Sans Pro';
+  display:flex;
+  flex-direction: column;
+  align-content: flex-row;
+  margin: 0 10px;
+} */
