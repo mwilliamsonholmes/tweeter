@@ -18,3 +18,7 @@ float: right;
 .input {
   font-family: 'Bungee';
 }
+
+.color-red {
+  color:red;
+}
