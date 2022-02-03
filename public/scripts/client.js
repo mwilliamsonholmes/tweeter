@@ -8,6 +8,15 @@
 //document ready function- code inside here will only run once the page(DOM) is ready for JavaScript code to execute
 
 $(document).ready(function () {
+
+
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
+
   const createTweetElement = function (tweetObj) {
     const $tweet = $("<article>").addClass("tweet");
     const markup = `
@@ -16,7 +25,7 @@ $(document).ready(function () {
 <span>${tweetObj.user.name}</span>
 <span> ${tweetObj.user.handle}</span>
 </header>
-<span>${tweetObj.content.text}</span>
+<span>${escape(tweetObj.content.text)}</span>
 
 <footer>
 <span>${timeago.format(tweetObj.created_at)}></span>
@@ -26,7 +35,7 @@ $(document).ready(function () {
     return tweetElement;
 
   }
-  // });
+
 
   const renderTweets = function (tweets) {
     //takes in an array of tweet objects
@@ -69,10 +78,12 @@ $(document).ready(function () {
       data: $("#form").serialize(),
       success: () => loadTweets(),
     })
+    //this line empties the input field so you can enter a new tweet
+    $("#tweet-text").val('');
   })
-
-
   loadTweets();
+
+
 });
 
 // const tweetData = {
