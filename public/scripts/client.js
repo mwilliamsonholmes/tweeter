@@ -22,7 +22,7 @@ const createTweetElement = function (tweetObj) {
 <span>${tweetObj.content.text}</span>
 
 <footer>
-<span>${timeago.format(tweetData.created_at)}></span>
+<span>${timeago.format(tweetObj.created_at)}></span>
 <span class="icons"><i class="fa-solid fa-flag"></i><i class="fa-solid fa-retweet"></i><i class="fa-regular fa-heart"></i></span>
 </footer>`;
   let tweetElement = $tweet.append(markup)
@@ -46,36 +46,39 @@ const renderTweets = function (tweets) {
 
 //get tweets
 const loadTweets = function () {
-  $.get('/tweets')
-    .then(data => {
-      renderTweets(data);
+  $.ajax('/tweets', { method: "GET", dataType: "json" })
+    .then(function (allTweets) {
+      renderTweets(allTweets);
     })
 }
+loadTweets();
 // tweetContainer.empty();
 
 //send data to server ajax
-$('#form').on('submit', function(event) {
+$('#form').on('submit', function (event) {
   event.preventDefault();
-})
-
+  console.log("hello");
   $.ajax({
     method: "POST",
     url: $("#form").attr("action"),
     data: $("#form").serialize(),
     success: () => loadTweets(),
   })
+})
 
 
 
-const tweetData = {
-  "user": {
-    "name": "Newton",
-    "avatars": "https://i.imgur.com/73hZDYK.png",
-    "handle": "@SirIsaac"
-  },
-  "content": {
-    "text": "If I have seen further it is by standing on the shoulders of giants"
-  },
-  "created_at": 1461116232227
-}
+
+
+// const tweetData = {
+//   "user": {
+//     "name": "Newton",
+//     "avatars": "https://i.imgur.com/73hZDYK.png",
+//     "handle": "@SirIsaac"
+//   },
+//   "content": {
+//     "text": "If I have seen further it is by standing on the shoulders of giants"
+//   },
+//   "created_at": 1461116232227
+// }
 
