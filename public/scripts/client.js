@@ -16,8 +16,8 @@ const createTweetElement = function (tweetObj) {
   const markup = `
 <header class="header">
 <img src = ${tweetObj.user.avatars}>
-<span> ${tweetObj.user.name}></span>
-<span> ${tweetObj.user.handle}></span>
+<span>${tweetObj.user.name}</span>
+<span> ${tweetObj.user.handle}</span>
 </header>
 <span>${tweetObj.content.text}</span>
 
@@ -44,13 +44,26 @@ const renderTweets = function (tweets) {
   })
 };
 
-
+//get tweets
 const loadTweets = function () {
   $.get('/tweets')
     .then(data => {
       renderTweets(data);
     })
 }
+// tweetContainer.empty();
+
+//send data to server ajax
+$('#form').on('submit', function(event) {
+  event.preventDefault();
+})
+
+  $.ajax({
+    method: "POST",
+    url: $("#form").attr("action"),
+    data: $("#form").serialize(),
+    success: () => loadTweets(),
+  })
 
 
 
