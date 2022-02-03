@@ -34,6 +34,8 @@
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/client.js"></script>
   <script src="/scripts/composer-char-counter.js"></script>
+  <!-- Disabling Viewport Zooming -->
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
 </head>
 
 <body>
@@ -60,8 +62,9 @@
   <!-- Page-specific (main) content here -->
   <main class="container">
     <section class="new-tweet">
+      <div id="error-message"></div>
       <h2>New Tweet</h2>
-      <form action="/tweets" method="POST">
+      <form id="form" action="/tweets" method="POST">
         <label class="input" for="tweet-text">What are you humming about?</label>
         <textarea name="text" id="tweet-text"></textarea>
         <div>
@@ -73,30 +76,7 @@
 
 
     <section class="all-tweets">
-      <article class="tweet">
 
-        <!--tweet header-->
-        <header>
-          <div class="avatarName">
-            <img class="photo" src="https://i.imgur.com/73hZDYK.png" />
-            <span class="user-name">Newton</span>
-          </div>
-          <span class="user-handle">@SirIsaac</span>
-        </header>
-        <!--tweet body-->
-
-        <p>Hodor hodor hodor hodor hodor...</p>
-
-        <!--tweet footer-->
-        <footer>
-          <div>2 months ago</div>
-          <div class="icons">
-            <i class="fa-solid fa-flag"></i>
-            <i class="fa-solid fa-retweet"></i>
-            <i class="fa-regular fa-heart"></i>
-          </div>
-        </footer>
-      </article>
     </section>
   </main>
 </body>
