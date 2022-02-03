@@ -60,17 +60,22 @@ $(document).ready(function () {
   loadTweets();
   // tweetContainer.empty();
 
+  // <div id="error-message"></div>
+  const errorMessage = function (message) {
+    $("#error-message").text(message).slideDown(1000).slideUp(7000);
+  };
+
   //send data to server ajax
   $('#form').on('submit', function (event) {
     event.preventDefault();
     let tweetLength = $("#tweet-text").val();
     if (tweetLength === "" || tweetLength === null) {
-      alert("Tweet cannot be empty.");
-      return;
+      return errorMessage("Tweet cannot be empty.");
+
     }
     if (tweetLength.length > 140) {
-      alert(`Tweet cannot be more than 140 characters- you have ${tweetLength}.`);
-      return;
+      return errorMessage(`Tweet cannot be more than 140 characters.`);
+
     }
     $.ajax({
       method: "POST",
@@ -82,7 +87,6 @@ $(document).ready(function () {
     $("#tweet-text").val('');
   })
   loadTweets();
-
 
 });
 
