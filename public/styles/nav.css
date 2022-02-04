@@ -20,11 +20,16 @@ nav {
 #write-new {
   display: flex;
   flex-direction: column;
+  text-align: center;
 }
-/* .banner {
-  font-family: 'Source Sans Pro';
-  display:flex;
-  flex-direction: column;
-  align-content: flex-row;
-  margin: 0 10px;
-} */
+
+#write-new > i {
+  color: red;
+}
+
+@media only screen and (max-width: 900px) {
+  nav {
+    background-color: #d1bea7;
+background-image: url("https://www.transparenttextures.com/patterns/fresh-snow.png"); 
+  }
+}
