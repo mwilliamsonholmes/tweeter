@@ -11,6 +11,7 @@ float: right;
 }
 #tweet-text {
   background-color: #f4f1ec;
+  margin-top: 5%;
   width: 100%;
   border-style: none;
   border-bottom:4px solid rgb(10, 10, 171);
@@ -21,4 +22,13 @@ float: right;
 
 .color-red {
   color:red;
+}
+
+#error-message {
+background-color: #4056A1 ;
+
+font-size: 40px;
+font-family: 'Bungee';
+color:snow
+
 }
