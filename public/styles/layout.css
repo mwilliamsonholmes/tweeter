@@ -29,7 +29,13 @@ main {
   background-color: #f4f1ec;
 }
   
-*/
+@media only screen and (min-width: 900px) {
+  main {
+    margin-top: 150px;
+        width: 60%;
+        float: right;
+      }
+    }
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
