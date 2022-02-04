@@ -11,11 +11,13 @@ article.tweet {
   padding: 20px;
    display: flex;
   flex-direction:column;
-  justify-content: space-between;
+  
 }
 
-article.tweet :hover {
-  box-shadow: 3px 5px;
+
+article.tweet:hover {
+  opacity: 1;
+ box-shadow: 5px 10px 8px 10px #888888;
 }
 
 article.tweet header{
@@ -24,35 +26,15 @@ article.tweet header{
   font-size: 35px;
   display:flex;
   flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
+  justify-content:space-between;
   padding: 10px;
   margin-top: 0px;
   margin-bottom: 10px;
   background-color:#f4f1ec;
 }
 
-article.tweet header.user-name {
-  flex: 1;
-  padding: 0 1em;
-}
-
-.avatarName{
-  display: flex;
-  flex-direction: row;
-
-}
-.photo {
-  width: 50px;
-  height: 50px;
-}
-
-article.tweet p {
-  font-size: 35px;
-}
-
 article.tweet footer{
-  width: 100%;
+  /* width: 100%; */
   border-top-style: solid;
   padding-top: 0.5em ;
   display: flex;
@@ -60,13 +42,11 @@ article.tweet footer{
   box-sizing:border-box;
   align-items: center;
   font-size: 25px;
+  flex-direction: row;
+  margin-left: 1em;
+  margin-right: 1em;
 }
-.icons {
-  font-size: 30px;
-  display:flex;
-  justify-content: flex-end;
-  padding-right: 10px;
-}
+
 
 article.tweet footer .fa-flag:hover {
   color: #deae68;
