@@ -7,6 +7,10 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Final Product
 !["Screenshot of the desktop view of Tweeter."](https://github.com/mwilliamsonholmes/tweeter/blob/master/docs/desktop-view.png?raw=true)
+
+!["Screenshot of the mobile view of Tweeter."](https://github.com/mwilliamsonholmes/tweeter/blob/master/docs/mobile-view.png?raw=true)
+
+!["Screenshot of a tweet."](https://github.com/mwilliamsonholmes/tweeter/blob/master/docs/tweet.png?raw=true)
 ## Getting Started
 
 1. [Create](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template) a new repository using this repository as a template.
