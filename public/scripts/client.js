@@ -21,10 +21,14 @@ $(document).ready(function () {
     const $tweet = $("<article>").addClass("tweet");
     const markup = `
 <header class="header">
+<div name="leftHeader">
 <img src = ${tweetObj.user.avatars}>
 <span>${tweetObj.user.name}</span>
+</div>
 <span> ${tweetObj.user.handle}</span>
 </header>
+
+
 <span>${escape(tweetObj.content.text)}</span>
 
 <footer>
@@ -33,7 +37,6 @@ $(document).ready(function () {
 </footer>`;
     let tweetElement = $tweet.append(markup)
     return tweetElement;
-
   }
 
 
@@ -58,11 +61,11 @@ $(document).ready(function () {
       })
   }
   loadTweets();
-  // tweetContainer.empty();
 
-  // <div id="error-message"></div>
+
+
   const errorMessage = function (message) {
-    $("#error-message").text(message).slideDown(1000).slideUp(7000);
+    $("#error-message").text(message).slideDown(6000).slideUp(7000);
   };
 
   //send data to server ajax
@@ -70,35 +73,24 @@ $(document).ready(function () {
     event.preventDefault();
     let tweetLength = $("#tweet-text").val();
     if (tweetLength === "" || tweetLength === null) {
-      return errorMessage("Tweet cannot be empty.");
+      return errorMessage("Ooops! Tweet cannot be empty.");
 
     }
     if (tweetLength.length > 140) {
-      return errorMessage(`Tweet cannot be more than 140 characters.`);
+      return errorMessage(`Tweet must be less than 140 characters! `);
 
     }
     $.ajax({
       method: "POST",
       url: $("#form").attr("action"),
       data: $("#form").serialize(),
-      success: () => loadTweets(),
+      success: () => {
+        $('.counter').text("140");
+        $("#tweet-text").val('');
+        loadTweets();
+      }
+      //this line empties the input field so you can enter a new tweet
     })
-    //this line empties the input field so you can enter a new tweet
-    $("#tweet-text").val('');
-  })
-  loadTweets();
-
-});
-
-// const tweetData = {
-//   "user": {
-//     "name": "Newton",
-//     "avatars": "https://i.imgur.com/73hZDYK.png",
-//     "handle": "@SirIsaac"
-//   },
-//   "content": {
-//     "text": "If I have seen further it is by standing on the shoulders of giants"
-//   },
-//   "created_at": 1461116232227
-// }
-
+    loadTweets();
+  });
+})
